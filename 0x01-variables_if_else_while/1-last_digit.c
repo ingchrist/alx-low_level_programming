@@ -1,9 +1,8 @@
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
 #include <stdio.h>
 /**
- * main - Determining whether the last digit of generated number is
+ * main - Determining the last digit of a  number is
  * greater than, less than 5, or zero.
 (*
  * Return: 0 on validation
@@ -15,7 +14,6 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
 	printf("%s %d is %d and is ", last, n, n % 10);
 	if (n % 10 > 5)
 	{
