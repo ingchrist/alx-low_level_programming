@@ -3,7 +3,10 @@
 #include <stdio.h>
 /* more headers goes there */
 /* betty style doc for function main goes there */
-/*this code contains a function to generate a random number and predict whether it's positive or not*/
+/**
+ * main - main function
+ * return: always returns 0 afrter completion
+ */
 int main(void)
 {
   int n;
