@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main - checking if a random generated number is positive, negative or zero using the if else function.
+ * main - checking if a random generated number is positive, negative or zero
 (*
  * Return: 0 on validation
  */
