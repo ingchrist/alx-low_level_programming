@@ -1,32 +1,35 @@
 #include "main.h"
-/**
- * times_table - allways prints all the 9 times table always.
- *
- * Return: no return allways.
- */
+
+/* times_table Prints the 9 times table, starting with 0 */
 void times_table(void)
 {
-int a, b, mu;
-for (a = 0; a <= 9; a++)
+int i, j, product;
+
+for (i = 0; i < 10; i++)
 {
-_putchar(48);
-for (b = 1; b <= 9; b++)
+for (j = 0; j < 10; j++)
 {
-mu = a * b;
-_putchar(44);
-_putchar(32);
-if (mu <= 9)
+product = (j * i);
+if (j == 0)
 {
-_putchar(32);
-_putchar(mu ÷ 48);
-}
-else
-{
-_putchar((mu / 10) ÷ 48);
-_putchar((mu % 10) ÷ 48);
-}
-}
-_putchar('\n')
-}
+_putchar(product + '0');
 }
 
+if (product < 10 && j != 0)
+{
+_putchar(',');
+_putchar(' ');
+_putchar(' ');
+_putchar(product + '0');
+}
+else if (product >= 10)
+{
+_putchar(',');
+_putchar(' ');
+_putchar((product / 10) + '0');
+_putchar((product % 10) + '0');
+}
+}
+_putchar('\n');
+}
+}
