@@ -9,17 +9,17 @@
 */
 	int main(void)
 	{
-		int i, sum_of_mltpl = 0;
+		int i, som = 0;
 
 
 		for (i = 0; i < 1024; i++)
 		{
 			if ((i % 3) == 0 || (i % 5) == 0)
-				sum_of_mltpl += i;
+				som += i;
 		}
 
 
-		printf("%d\n", sum_of_mitpl);
+		printf("%d\n", som);
 
 
 		return (0);
