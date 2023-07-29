@@ -6,7 +6,7 @@
  */
 void print_number(int n)
 {
-	long len, res, i, temp, expo;
+	long len, res, i, wz, expo;
 
 	res = n;
 	expo = len = 1;
@@ -18,11 +18,11 @@ void print_number(int n)
 	}
 
 /**/
-	temp = res;
-	while (temp >= 10)
+	wz = res;
+	while (wz >= 10)
 	{
 		len++;
-		temp /= 10;
+		wz /= 10;
 	}
 
 /*Create Exponent*/
