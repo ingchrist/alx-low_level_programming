@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * factorial - returns factorial of number
- * @n: number to return factorial from
- *
- * Return: the factorial of n
- */
-int factorial(int wz)
+* factorial - returns factorial of number
+* @w: number to return factorial from
+*
+* Return: the factorial of w
+*/
+int factorial(int w)
 {
-if (wz < 0)
+if (w < 0)
 return (-1);
-if (wz == 0)
+if (w == 0)
 return (1);
-return (wz * factorial(wz - 1));
+return (w * factorial(w - 1));
 }
 
