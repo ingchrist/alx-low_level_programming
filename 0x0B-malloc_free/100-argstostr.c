@@ -1,41 +1,34 @@
-#include "main.h"
 #include <stdlib.h>
+
 /**
- * argstostr - main entries
- * @ac: int inputs
- * @av: double pointer arrays
- * Return: 0
+ * argstostr - allocate memory for concat of an array of strings
+ * @ac: number of strings
+ * @av: array of strings
+ * Return: pointer to string concat
  */
 char *argstostr(int ac, char **av)
 {
-int wz, xz, r = 0, l = 0;
-char *str;
+int wz, c, i = 0, len = 0;
+char *p;
 
-if (ac == 0 || av == NULL)
-return (NULL);
-
-for (wz = 0; wz < ac; wz++)
-{
-for (xz = 0; av[wz][wz]; xz++)
-l++;
-}
-l += ac;
-
-str = malloc(sizeof(char) * l + 1);
-if (str == NULL)
+if (ac <= 0 || av == NULL)
 return (NULL);
 for (wz = 0; wz < ac; wz++)
 {
-for (xz = 0; av[wz][xz]; xz++)
+for (c = 0; av[wz][c]; c++)
+;
+len += c + 1;
+}
+p = malloc(len + 1);
+if (p != NULL)
 {
-str[r] = av[wz][xz];
-r++;
-}
-if (str[r] == '\0')
+for (wz = 0; wz < ac; wz++)
 {
-str[r++] = '\n';
+for (c = 0; av[wz][c]; c++, i++)
+p[i] = av[wz][c];
+p[i++] = '\n';
 }
+p[i] = '\0';
 }
-return (str);
+return (p);
 }
-
