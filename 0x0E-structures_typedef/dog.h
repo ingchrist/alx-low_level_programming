@@ -35,11 +35,11 @@ int _putchar(char);
 
 
 
-void init_dog(struct dog *q, char *name, float age, char *owner);
+void init_dog(struct dog *wz, char *name, float age, char *owner);
 
 
 
-void print_dog(struct dog *q);
+void print_dog(struct dog *wz);
 
 
 
@@ -47,7 +47,7 @@ dog_t *new_dog(char *name, float age, char *owner);
 
 
 
-void free_dog(dog_t *q);
+void free_dog(dog_t *wz);
 
 
 
