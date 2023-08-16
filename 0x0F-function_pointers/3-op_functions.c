@@ -5,14 +5,14 @@
 
 /**
  *  * op_add - calculates the sum of two integers
- *   * @a: first integer
+ *   * @wz: first integer
  *    * @b: second integer
  *     *
  *      * Return: sum of a and b
  */
-int op_add(int a, int b)
+int op_add(int wz, int b)
 {
-return (a + b);
+return (wz + b);
 }
 
 /**
