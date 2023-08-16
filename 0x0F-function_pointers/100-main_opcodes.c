@@ -3,17 +3,17 @@
 
 /**
  *  * main - Prints opcodes of itself.
- *   * @argc: The number of arguments supply to the program.
+ *   * @argc_wz: The number of arguments supply to the program.
  *    * @argv: An array of pointers to the argument
  *      * Return: Always 0.
  */
-int main(int argc, char *argv[])
+int main(int argc_wz, char *argv[])
 {
 int bytes, index;
 int (*address)(int, char **) = main;
 unsigned char opcode;
 
-if (argc != 2)
+if (argc_wz != 2)
 {
 printf("Error\n");
 exit(1);
