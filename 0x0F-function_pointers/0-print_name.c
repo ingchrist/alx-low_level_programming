@@ -6,11 +6,11 @@
 /**
  * print_name - Prints a name
  * @name: The name to prints
- * @f: Pointer to function 
+ * @wz: Pointer to function
  * Return: Nothing
- * */
-void print_name(char *name, void (*f)(char *))
+ */
+void print_name(char *name, void (*wz)(char *))
 {
-if (name != NULL && f != NULL)
-f(name);
+if (name != NULL && wz != NULL)
+wz(name);
 }
