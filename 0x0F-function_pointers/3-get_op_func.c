@@ -20,15 +20,15 @@ op_t ops[] = {
 {"%", op_mod},
 {NULL, NULL}
 };
-int wz;
+int i;
 
-wz = 0;
+i = 0;
 
-while (ops[wz].op)
+while (ops[i].op)
 {
-if (strcmp(ops[wz].op, s) == 0)
-return (ops[wz].f);
-wz++;
+if (strcmp(ops[i].op, s) == 0)
+return (ops[i].f);
+i++;
 }
 
 return (NULL);

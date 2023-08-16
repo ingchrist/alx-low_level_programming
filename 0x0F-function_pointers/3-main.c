@@ -12,7 +12,7 @@
 
 int main(int argc, char *argv[])
 {
-int wz, b;
+int a, b;
 int (*o)(int, int);
 
 if (argc != 4)
@@ -28,10 +28,10 @@ printf("Error\n");
 exit(99);
 }
 
-wz = atoi(argv[1]);
+a = atoi(argv[1]);
 b = atoi(argv[3]);
 
-printf("%d\n", o(wz, b));
+printf("%d\n", o(a, b));
 
 return(0);
 }
