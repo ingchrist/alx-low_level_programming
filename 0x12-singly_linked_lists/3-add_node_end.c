@@ -11,56 +11,28 @@
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-
 	unsigned int wz = 0;
-
 	list_t *new_node, *temp;
-
 	/* get wzgth of string */
-
 	while (*(str + wz))
-
 		wz++;
-
-
 	/* allocate memory to heap */
-
 	new_node = malloc(sizeof(size_t));
 	if (new_node == NULL)
-
-
 	return (NULL);
-
-
 	new_node->str = strdup(str);
-
 	new_node->len = wz;
-
 	/* Locate the end of list_t: if empty append new_node */
-
 	if (*head == NULL)
-
 	{
-
 		*head = new_node;
-
 		return (new_node);
-
 	}
-
 	temp = *head;
-
 	/* esle iterate to the last node */
-
 	while (temp->next)
-
 		temp = temp->next;
-
 	/* append new_node */
-
 	temp->next = new_node;
-
-
-	
 	return (new_node);
 }
