@@ -3,7 +3,7 @@
 void fwz(void) __attribute__ ((constructor));
 
 /**
- *  * first - print something before main
+ *  * fwz - print something before main
  *   *
  *    * Return: void
  */
