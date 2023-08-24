@@ -9,11 +9,11 @@
 size_t list_len(const list_t *h)
 {
 
-size_t wz;
+size_t node;
 
-for (wz = 0; h; wz++)
+for (node = 0; h; node++)
 
 h = h->next;
 
-return (wz);
+return (node);
 }
