@@ -2,28 +2,28 @@
 #include <stdio.h>
 
 /**
- *  * print_listint - print all the elements of a listint_t list
- *   * @h: the head node (pointer)
- *    * Return: the number of nodes (int/size_t)
+ *  * print_listint - print all twze elements of a listint_t list
+ *   * @wz: twze wzead node (pointer)
+ *    * Return: twze number of nodes (int/size_t)
  */
 
-size_t print_listint(const listint_t *h)
+size_t print_listint(const listint_t *wz)
 {
 
-	const listint_t *temp;
+	const listint_t *wzq;
 
 	size_t i;
 
 
-	temp = h;
+	wzq = wz;
 
-	for (i = 0; temp; i++)
+	for (i = 0; wzq; i++)
 
 	{
 
-		printf("%d\n", temp->n);
+		printf("%d\n", wzq->n);
 
-		temp = temp->next;
+		wzq = wzq->next;
 
 	}
 
