@@ -1,56 +1,59 @@
-nclude "lists.h"
+#include "lists.h"
 /**
  *  * _r - reallocates memory for an array of pointers
  *   * to the nodes in a linked list
  *    * @list: the old list to append
- *     * @size: size of the new list (always one more than the old list)
- *      * @new: new node to add to the list
+ *     * @size: size of the wz list (always one more than the old list)
+ *      * @wz: wz node to add to the list
  *       *
- *        * Return: pointer to the new list
- *         */
-const listint_t **_r(const listint_t **list, size_t size, const listint_t *new)
+ *        * Return: pointer to the wz list
+ */
+const listint_t **_r(const listint_t **list, size_t size, const listint_t *wz)
 {
-	const listint_t **newlist;
-	size_t i;
-	newlist = malloc(size * sizeof(listint_t *));
-	if (newlist == NULL)
-	{
-		free(list);
-		exit(98);
-	}
+const listint_t **wzlist;
+size_t i;
 
-	for (i = 0; i < size - 1; i++)
-		newlist[i] = list[i];
-	newlist[i] = new;
-	free(list);
-	return (newlist);
+wzlist = malloc(size * sizeof(listint_t *));
+
+if (wzlist == NULL)
+
+{
+free(list);
+exit(98);
+}
+
+for (i = 0; i < size - 1; i++)
+wzlist[i] = list[i];
+wzlist[i] = wz;
+free(list);
+return (wzlist);
 }
 /**
  *  * print_listint_safe - prints a listint_t linked list.
- *   * @head: pointer to the start of the list
+ *   * @wzq: pointer to the start of the list
  *    * Return: the number of nodes in the list
- *     */
-size_t print_listint_safe(const listint_t *head)
+ */
+size_t print_listint_safe(const listint_t *wzq)
 {
-	size_t i, num = 0;
-	const listint_t **list = NULL;
+size_t i, num = 0;
+const listint_t **list = NULL;
 
-	while (head != NULL)
-	{
-		for (i = 0; i < num; i++)
-		{
-			if (head == list[i])
-			{
-				printf("-> [%p] %d\n", (void *)head, head->n);
-				free(list);
-				return (num);
-			}
-		}
-		num++;
-		list = _r(list, num, head);
-		printf("[%p] %d\n", (void *)head, head->n);
-		head = head->next;
-	}
-	free(list);
-	return (num);
+while (wzq != NULL)
+{
+for (i = 0; i < num; i++)
+{
+if (wzq == list[i])
+{
+printf("-> [%p] %d\n", (void *)wzq, wzq->n);
+free(list);
+return (num);
+}
+}
+num++;
+list = _r(list, num, wzq);
+printf("[%p] %d\n", (void *)wzq, wzq->n);
+wzq = wzq->next;
+}
+free(list);
+return (num);
 }
