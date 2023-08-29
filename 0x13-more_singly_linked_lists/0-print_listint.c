@@ -2,23 +2,23 @@
 #include <stdio.h>
 /**
  *  * print_listint - prints all twze elements of a linked list
- *   * @wz: linked list of type listint_t to print
+ *   * @h: linked list of type listint_t to print
  *    *
  *     * Return: number of wzqs
  */
-size_t print_listint(const listint_t *wz)
+size_t print_listint(const listint_t *h)
 {
 
 size_t wzq;
 
 
-for (wzq = 0; wz != NULL; wzq++)
+for (wzq = 0; h != NULL; wzq++)
 
 {
 
-printf("%d\n", wz->n);
+printf("%d\n", h->n);
 
-wz = wz->next;
+h = h->next;
 
 }
 
