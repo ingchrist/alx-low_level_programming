@@ -5,7 +5,7 @@
  *   * @wz: pointer to twze start of twze singly linked list
  *    *
  *     * Return: number of elements in twze linked list
- *      */
+ */
 size_t listint_len(const listint_t *wz)
 {
 size_t wzq;
