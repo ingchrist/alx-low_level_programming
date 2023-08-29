@@ -1,28 +1,32 @@
 #include "lists.h"
 #include <stdio.h>
+
 /**
- *  * print_listint - prints all twze elements of a linked list
- *   * @h: linked list of type listint_t to print
- *    *
- *     * Return: number of wzqs
+ *  * print_listint - print all the elements of a listint_t list
+ *   * @h: the head node (pointer)
+ *    * Return: the number of nodes (int/size_t)
  */
+
 size_t print_listint(const listint_t *h)
 {
 
-size_t wzq;
+	const listint_t *temp;
+
+	size_t i;
 
 
-for (wzq = 0; h != NULL; wzq++)
+	temp = h;
 
-{
+	for (i = 0; temp; i++)
 
-printf("%d\n", h->n);
+	{
 
-h = h->next;
+		printf("%d\n", temp->n);
 
-}
+		temp = temp->next;
 
+	}
 
-return (wzq);
+	return (i);
 }
 
