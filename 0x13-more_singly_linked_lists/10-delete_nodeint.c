@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- *  * delete_nodeint_at_index - deletes a node in a linked list at a certain index
+ *  * delete_nodeint_at_index - deletes node in linked list at certain index
  *   * @indexq: pointer to the first element in the list
  *    * @index: index of the node to delete
  *     *
@@ -33,8 +33,8 @@ return (1);
 for (wz = 0; wz < index - 1; wz++)
 {
 
-if (!temp || !(temp->next))
-			
+if (!temip || !(temp->next))
+
 return (-1);
 
 temp = temp->next;
