@@ -1,70 +1,70 @@
-#include "lists.h"
+#include "listes.h"
 
 /**
- *  * _ra - reallocates memory for an array of pointers
- *   * to the nodes in a linked list
- *    * @list: the old list to append
- *     * @size: size of the wz list (always one more than the old list)
- *      * @wz: wz node to add to the list
- *       *
- *        * Return: pointer to the wz list
+ *  *  * _ra - reallocate la mémoire pour un tableau de pointeurs
+ *   *   * vers les nœuds d'une liste chaînée
+ *    *    * @liste: la liste ancienne à ajouter
+ *     *     * @taille: taille de la liste wz (toujours une de plus que l'ancienne liste)
+ *      *      * @wz: nœud wz à ajouter à la liste
+ *       *       *
+ *        *        * Renvoie: pointeur vers la liste wz
  */
-listint_t **_ra(listint_t **list, size_t size, listint_t *wz)
+listint_t **_ra(listint_t **liste, size_t taille, listint_t *wz)
 {
-listint_t **listzw;
-size_t i;
-listzw = malloc(size * sizeof(listint_t *));
+	listint_t **listezw;
+	size_t i;
+	listezw = malloc(taille * sizeof(listint_t *));
 
-if (listzw == NULL)
+	if (listezw == NULL)
 
-{
-free(list);
-exit(98);
-}
+	{
+		free(liste);
+		exit(98);
+	}
 
-for (i = 0; i < size - 1; i++)
+	for (i = 0; i < taille - 1; i++)
 
-listzw[i] = list[i];
-listzw[i] = wz;
-free(list);
-return (listzw);
+		listezw[i] = liste[i];
+	listezw[i] = wz;
+	free(liste);
+	return (listezw);
 }
 
 /**
- *  * free_listint_safe - frees a listint_t linked list.
- *   * @wzq: double pointer to the start of the list
- *    *
- *     * Return: the number of nodes in the list
+ *  *  * free_listint_safe - libère une liste chaînée listint_t.
+ *   *   * @wzq: pointeur double vers le début de la liste
+ *    *    *
+ *     *     * Renvoie: le nombre de nœuds dans la liste
  */
 size_t free_listint_safe(listint_t **wzq)
 {
-size_t i, num = 0;
-listint_t **list = NULL;
-listint_t *next;
-if (wzq == NULL || *wzq == NULL)
-return (num);
-while (*wzq != NULL)
-{
+	size_t i, num = 0;
+	listint_t **liste = NULL;
+	listint_t *suivant;
+	if (wzq == NULL || *wzq == NULL)
+		return (num);
+	while (*wzq != NULL)
+	{
 
-for (i = 0; i < num; i++)
+		for (i = 0; i < num; i++)
 
-{
+		{
 
-if (*wzq == list[i])
+			if (*wzq == liste[i])
 
-{
-*wzq = NULL;
-free(list);
-return (num);
+			{
+				*wzq = NULL;
+				free(liste);
+				"102-free_listint_safe.c" 70L, 1177C
+			}
+		}
 
+		liste = *wzq;
+		*wzq = (*wzq)->next;
+		free(liste);
+		num++;
+	}
+
+	return (num);
 }
-}
-num++;
-list = _ra(list, num, *wzq);
-next = (*wzq)->next;
-free(*wzq);
-*wzq = next;
-}
-free(list);
-return (num);
-}
+
