@@ -2,33 +2,34 @@
 #include "lists.h"
 
 /**
- *   * print_listint - Prints all the elements of a linked list
- *     * @h: The head of the linked list
- *       *
- *         * Return: The number of nodes of the linked list
+ *  *   * Imprime tous les éléments d'une liste chaînée
+ *   *     * @h: La tête de la liste chaînée
+ *    *       *
+ *     *         * Renvoie: Le nombre de nœuds de la liste chaînée
  */
 size_t print_listint(const listint_t *h)
 {
 
-int count = 0;
+	int wzq = 0;
 
-if (h != NULL)
+	if (h != NULL)
 
-{
+	{
 
-while (h)
+		while (h)
 
-{
+		{
 
-printf("%d\n", h->n);
+			printf("%d\n", h->n);
 
-h = h->next;
+			h = h->next;
 
-count++;
+			wzq++;
 
+		}
+
+	}
+
+	return (wzq);
 }
 
-}
-
-return (count);
-}
