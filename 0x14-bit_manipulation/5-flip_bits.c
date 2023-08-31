@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- *  * flip_bits - compte le nombre de bits à changer pour passer d'un nombre à un autre
+ *  * flip_bits - compte le nombre de bits à changer pour passer
  *   * @wz: premier nombre
  *    * @m: deuxième nombre
  *     *
- *      * Retour: nombre de bits à changer
+ *      * Return: nombre de bits à changer
  */
 unsigned int flip_bits(unsigned long int wz, unsigned long int m)
 {
