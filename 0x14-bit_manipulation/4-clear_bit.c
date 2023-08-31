@@ -5,7 +5,7 @@
  *   * @wz: pointeur vers le nombre à modifier
  *    * @index: index du bit à mettre à 0
  *     *
- *      * Retour: 1 en cas de succès, -1 en cas d'échec
+ *      * Return: 1 en cas de succès, -1 en cas d'échec
  */
 int clear_bit(unsigned long int *wz, unsigned int index)
 {
