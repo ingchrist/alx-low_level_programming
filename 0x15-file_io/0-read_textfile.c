@@ -1,47 +1,49 @@
 #include "main.h"
+
 /**
- *  * read_textfile - reads a text file and prints it to the standard output
- *   * @filename: name of the file to be read
- *    * @letters: number of letters to read and print
+ *  * Lit un fichier texte et l'affiche sur la sortie standard
+ *   * @filename: nom du fichier à lire
+ *    * @letters: nombre de lettres à lire et à imprimer
  *     *
- *      * Return: the number of letters printed, or 0 if it failed
- */
+ *      * Retour: le nombre de lettres imprimées, ou 0 si échec
+ *       */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
+	int wz;
 	ssize_t len_read, len_write;
-	char *buffer;
+	char *wzq;
 
 	if (!filename)
 		return (0);
 
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
+	wz = open(filename, O_RDONLY);
+	if (wz == -1)
 		return (0);
 
-	buffer = malloc(sizeof(char) * letters);
-	if (!buffer)
+	wzq = malloc(sizeof(char) * letters);
+	if (!wzq)
 	{
-		close(fd);
+		close(wz);
 		return (0);
 	}
 
-	len_read = read(fd, buffer, letters);
-	close(fd);
+	len_read = read(wz, wzq, letters);
+	close(wz);
 	if (len_read == -1)
 	{
-		free(buffer);
+		free(wzq);
 		return (0);
 	}
-	buffer[len_read] = '\0';
+	wzq[len_read] = '\0';
 
-	len_write = write(STDOUT_FILENO, buffer, len_read);
+	len_write = write(STDOUT_FILENO, wzq, len_read);
 	if (len_write < 0)
 	{
-		free(buffer);
+		free(wzq);
 		return (0);
 	}
 
-	free(buffer);
+	free(wzq);
 	return (len_write);
 }
+
