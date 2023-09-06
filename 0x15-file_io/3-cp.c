@@ -1,14 +1,14 @@
 #include "main.h"
 /**
- *  * check_argc - checks for the correct number of arguments
- *   * @argc: number of arguments
+ *  * check_wz - checks for the correct number of arguments
+ *   * @wz: nombre darguments
  *    *
- *     * Return: void
+ *     * Return: imprimer rien sur lecran
  */
-void check_argc(int argc)
+void check_wz(int wz)
 {
 
-if (argc != 3)
+if (wz != 3)
 {
 dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 exit(97);
@@ -16,30 +16,30 @@ exit(97);
 }
 /**
  *  * main - copies the content of a file to another file
- *   * @argc: number of arguments passed to the program
- *    * @argv: array of arguments
+ *   * @wz: numbre dargument passer au programe
+ *    * @wzq: array dargumant a executer
  *     *
- *      * Return: Always 0 (Success)
+ *      * Return: imprimer 0 en cas de validation
  */
-int main(int argc, char *argv[])
+int main(int wz, char *wzq[])
 {
 	int file_from, file_to, read_f, close_r, close_w;
 	char buf[BUFSIZ];
 
-	check_argc(argc);
-	file_from = open(argv[1], O_RDONLY);
+	check_wz(wz);
+	file_from = open(wzq[1], O_RDONLY);
 
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", wzq[1]);
 		exit(98);
 	}
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	file_to = open(wzq[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	while ((read_f = read(file_from, buf, BUFSIZ)) > 0)
 	{
 		if (file_to == -1 || write(file_to, buf, read_f) != read_f)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", wzq[2]);
 			close(file_from);
 			close(file_to);
 			exit(99);
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 	}
 	if (read_f == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", wzq[1]);
 		exit(98);
 	}
 	close_r = close(file_from);
