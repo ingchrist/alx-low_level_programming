@@ -1,12 +1,11 @@
 #include "main.h"
-
 /**
- *  * Lit un fichier texte et l'affiche sur la sortie standard
+ *  * read_textfile - lit un fichier texte et l'imprime sur la sortie standard
  *   * @filename: nom du fichier à lire
- *    * @letters: nombre de lettres à lire et à imprimer
+ *    * @letters: nombre de lettres à lire et imprimer
  *     *
- *      * Retour: le nombre de lettres imprimées, ou 0 si échec
- *       */
+ *      * Return: le nombre de lettres imprimées, ou 0 en cas d'échec
+ */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int wz;
