@@ -4,7 +4,7 @@
  *   * @filename: nom du fichier à créer
  *    * @text_content: texte à écrire dans le fichier
  *     *
- *      * Retour: 1 en cas de succès, -1 en cas d'échec
+ *      * Return: 1 en cas de succès, -1 en cas d'échec
  */
 int create_file(const char *filename, char *text_content)
 {
