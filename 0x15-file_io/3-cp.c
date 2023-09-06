@@ -10,8 +10,8 @@ void check_argc(int argc)
 
 if (argc != 3)
 {
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
+dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+exit(97);
 	}
 }
 /**
@@ -20,7 +20,7 @@ if (argc != 3)
  *    * @argv: array of arguments
  *     *
  *      * Return: Always 0 (Success)
- *       */
+ */
 int main(int argc, char *argv[])
 {
 	int file_from, file_to, read_f, close_r, close_w;
@@ -45,7 +45,6 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
-		
 	if (read_f == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
