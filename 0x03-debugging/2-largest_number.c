@@ -14,7 +14,7 @@ int largest;
 
 if (a > b && a > c)
 {
-argest = a;
+largest = a;
 }
 else if (a > b && c > a)
 {
