@@ -1,82 +1,63 @@
-#include <stdlib.h>
 #include "main.h"
-
+#include <stdlib.h>
 /**
- * count_word - helper function count the number of word of a string.
- * @s: string to evaluat
- *
- * Return: number of word
+ * ch_free_grid - Main Entry
+ * @grid: input
+ * @height: input
  */
-int count_word(char *s)
+void ch_free_grid(char **grid, unsigned int height)
 {
-int flag,
-wz;
-xy;
-
-flag = 0;
-xy = 0;
-
-for (wz = 0; s[wz] != '\0'; wz++)
-{
-if (s[wz] == ' ')
-flag = 0;
-else if (flag == 0)
-{
-flag = 1;
-xy++;
-}
-}
-
-return (xy);
+	if (grid != NULL && height != 0)
+	{
+		for (; height > 0; height--)
+			free(grid[height]);
+		free(grid[height]);
+		free(grid);
+	}
 }
 /**
- * **strtow - split any strings into words
- * @str: string to splits
- *
- * Return: pointer to an array of any string (validation)
- * or NULL (Error)
+ * strtow - Main Entry
+ * @str: input
+ * Return: 0
  */
 char **strtow(char *str)
 {
-char **matrix, *tmp;
-int qq;
-k = 0;
-len = 0;
-words, c = 0;
-start, end;
+	char **aout;
+	unsigned int c, height, i, j, a1;
 
-while (*(str + len))
-len++;
-words = count_word(str);
-if (words == 0)
-return (NULL);
-
-matrix = (char **) malloc(sizeof(char *) * (words + 1));
-if (matrix == NULL)
-return (NULL);
-
-for (qq = 0; qq <= len; qq++)
-{
-if (str[qq] == ' ' || str[qq] == '\0')
-{
-if (c)
-{
-end = qq;
-tmp = (char *) malloc(sizeof(char) * (c + 1));
-if (tmp == NULL)
-return (NULL);
-while (start < end)
-*tmp++ = str[start++];
-*tmp = '\0';
-matrix[k] = tmp - c;
-k++;
-c = 0;
-}
-}
-else if (c++ == 0)
-start = qq;
-}
-matrix[k] = NULL;
-return (matrix);
+	if (str == NULL || *str == '\0')
+		return (NULL);
+	for (c = height = 0; str[c] != '\0'; c++)
+		if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
+			height++;
+	aout = malloc((height + 1) * sizeof(char *));
+	if (aout == NULL || height == 0)
+	{
+		free(aout);
+		return (NULL);
+	}
+	for (i = a1 = 0; i < height; i++)
+	{
+		for (c = a1; str[c] != '\0'; c++)
+		{
+			if (str[c] == ' ')
+				a1++;
+			if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
+			{
+				aout[i] = malloc((c - a1 + 2) * sizeof(char));
+				if (aout[i] == NULL)
+				{
+					ch_free_grid(aout, i);
+					return (NULL);
+				}
+				break;
+			}
+		}
+		for (j = 0; a1 <= c; a1++, j++)
+			aout[i][j] = str[a1];
+		aout[i][j] = '\0';
+	}
+	aout[i] = NULL;
+	return (aout);
 }
 
