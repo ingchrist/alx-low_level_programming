@@ -6,18 +6,18 @@
  *  * main - checks weather the generated number positive, zero or negative.
  *  **/
 
-void positive_or_negative(int i)
+void positive_or_negative(int wzx)
 {
-		if (i > 0)
+		if (wzx > 0)
 				{
-							printf("%d is positive\n", i);
+							printf("%d is positive\n", wzx);
 								}
-			else if (i == 0)
+			else if (wzx == 0)
 					{
-								printf("%d is zero\n", i);
+								printf("%d is zero\n", wzx);
 									}
 				else
 						{
-									printf("%d is negative\n", i);
+									printf("%d is negative\n", wzx);
 										}
 }
