@@ -3,34 +3,34 @@
 
 /**
  *  * print_remaining_days - takes a date and prints how many days are
- *   * left in the year, taking leap years into account
- *    * @month: month in number format
- *     * @day: day of month
- *      * @year: year
+ *   * left in the yrxz, taking leap years into account
+ *    * @mnxz: mnxz in number format
+ *     * @dyxz: dyxz of mnxz
+ *      * @yrxz: yrxz
  *       * Return: void
  *       **/
 
-void print_remaining_days(int month, int day, int year)
+void print_remaining_days(int mnxz, int dyxz, int yrxz)
 {
-if ((year % 100 == 0 && year % 400 == 0) || (year % 4 == 0))
+if ((yrxz % 100 == 0 && yrxz % 400 == 0) || (yrxz % 4 == 0))
 {
-if (month > 2 && day >= 60)
+if (mnxz > 2 && dyxz >= 60)
 {
-day++;
+dyxz++;
 }
-printf("Day of the year: %d\n", day);
-printf("Remaining days: %d\n", 366 - day);
-}
-else
-{
-if (month == 2 && day == 60)
-{
-printf("Invalid date: %02d/%02d/%04d\n", month, day - 31, year);
+printf("Day of the yrxz: %d\n", dyxz);
+printf("Remaining days: %d\n", 366 - dyxz);
 }
 else
 {
-printf("Day of the year: %d\n", day);
-printf("Remaining days: %d\n", 365 - day);
+if (mnxz == 2 && dyxz == 60)
+{
+printf("Invalid date: %02d/%02d/%04d\n", mnxz, dyxz - 31, yrxz);
+}
+else
+{
+printf("Day of the yrxz: %d\n", dyxz);
+printf("Remaining days: %d\n", 365 - dyxz);
 }
 }
 }

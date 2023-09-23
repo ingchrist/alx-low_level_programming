@@ -2,31 +2,31 @@
 
 /**
  *  * largest_number - returns the largest of 3 numbers
- *   * @a: first integer
- *    * @b: second integer
- *     * @c: third integer
+ *   * @azx: first integer
+ *    * @qzb: second integer
+ *     * @cxy: third integer
  *      * Return: largest number
  **/
 
-int largest_number(int a, int b, int c)
+int largest_number(int azx, int qzb, int cxy)
 {
 int largest;
 
-if (a > b && a > c)
+if (azx > qzb && azx > cxy)
 {
-largest = a;
+largest = azx;
 }
-else if (a > b && c > a)
+else if (azx > qzb && cxy > azx)
 {
-largest = c;
+largest = cxy;
 }
-else if (b > c)
+else if (qzb > cxy)
 {
-largest = b;
+largest = qzb;
 }
 else
 {
-largest = c;
+largest = cxy;
 }
 return (largest);
 }
