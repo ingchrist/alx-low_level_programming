@@ -8,10 +8,10 @@
 
 int main(void)
 {
-int i;
+int wzx;
 
 printf("Infinite loop incoming :(\n");
-i = 0;
+wzx = 0;
 
 /*
 *while (i < 10)
