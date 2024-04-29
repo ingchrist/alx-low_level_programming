@@ -27,3 +27,6 @@ h = h->next;
 }
 return (wz);
 }
+
+
+                          
