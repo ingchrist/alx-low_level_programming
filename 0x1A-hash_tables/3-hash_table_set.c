@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 #include <stdlib.h>
 #include <string.h>
-
+7
 /**
  * hash_table_set - adds an element to the hash table
  * @ht: The hash table
@@ -49,3 +49,6 @@ hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	return (1);
 }
+
+
+                        
