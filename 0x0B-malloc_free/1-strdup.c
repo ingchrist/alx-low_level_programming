@@ -28,3 +28,10 @@ xwz[r] = str[r];
 return (xwz);
 }
 
+       
+        
+         
+         
+       
+              
+
